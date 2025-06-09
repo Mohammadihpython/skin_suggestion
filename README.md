@@ -12,7 +12,7 @@
 📤 Backend returns report to frontend
 
 ### workflow
-
+```text
 [User / Mobile App]
        |
        | 1. Upload Image + Metadata (user_id, etc)
@@ -68,9 +68,11 @@
        | 6. View Report / Routine
        v
 [User / Mobile App]
+```
 
 🧠 Breakdown of ML Modules
 
+```text
 ML Service:
 ├── kafka/
 │   ├── consumer.py        # Consumes image analysis jobs
@@ -135,8 +137,12 @@ ML Service:
  ┌────────────────────────────────┐
  |  Response: { task_id, status } |
  └────────────────────────────────┘
+
+```
+
 🧩 Backend Folder Breakdown
 
+```text
 backend/
 ├── app/
 │   ├── main.py                  # Start FastAPI
@@ -155,6 +161,8 @@ backend/
 │   ├── kafka/
 │   │   └── producer.py          # Async Kafka producer
 │   └── dependencies.py          # JWT, DB injectors
+
+```
 
 🔁 Typical API Interaction Flow
 Frontend calls POST /analyze-skin with image + user_id
